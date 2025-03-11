@@ -1,5 +1,20 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 {% block content %}
 <h1 style="text-align:center;">This is the home page.</h1>
-{{city}}
+<br>
+<form action="/handle-button" method="POST">
+	<table class="Cities" style="width:100%">
+		<tr>
+			<td><button type="button" class="btn btn-dark" value="Agrinio">Αγρίνιο</button></td>
+			<td><button type="button" class="btn btn-dark" value="Athens">Αθήνα</button></td>
+			<td><button type="button" class="btn btn-dark" value="Patra">Πάτρα</button></td>
+			<td><button type="button" class="btn btn-dark" value="Kalamata">Καλαμάτα</button></td>
+			<td><button type="button" class="btn btn-dark" value="Tripoli">Τρίπολη</button></td>
+			<td><button type="button" class="btn btn-dark" value="Thessaloniki">Θεσσαλονίκη</button></td>
+			<td><button type="button" class="btn btn-dark" value="Karpenisi">Καρπενήσι</button></td>
+			<td><button type="button" class="btn btn-dark" value="Chalkis">Χαλκίδα</button></td>
+			<td><button type="button" class="btn btn-dark" value="volos">Βόλος</button></td>
+		</tr>
+	</table>
+</form>
 {% endblock %}
