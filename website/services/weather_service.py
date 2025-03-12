@@ -3,9 +3,6 @@ import sys
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
-from website import db
-from website.models import City
-from website.views import main_view
 import requests
 import json
 
@@ -28,5 +25,3 @@ for item in response.json()["list"]:
 for key in weather_data:
     print("\n")
     print(key,":", weather_data[key])
-
-print(main_view.city_name)
