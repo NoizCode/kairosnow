@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, jsonify, g
 from sqlalchemy.orm import joinedload
-from .models import City
+from .models import City, Timestamp
 from . import db
 import json
 
