@@ -2,19 +2,34 @@
 {% block content %}
 <h1 style="text-align:center;">This is the home page.</h1>
 <br>
-<form action="/handle-button" method="POST">
-	<table class="Cities" style="width:100%">
-		<tr>
-			<td><button type="button" class="btn btn-dark" value="Agrinio">Αγρίνιο</button></td>
-			<td><button type="button" class="btn btn-dark" value="Athens">Αθήνα</button></td>
-			<td><button type="button" class="btn btn-dark" value="Patra">Πάτρα</button></td>
-			<td><button type="button" class="btn btn-dark" value="Kalamata">Καλαμάτα</button></td>
-			<td><button type="button" class="btn btn-dark" value="Tripoli">Τρίπολη</button></td>
-			<td><button type="button" class="btn btn-dark" value="Thessaloniki">Θεσσαλονίκη</button></td>
-			<td><button type="button" class="btn btn-dark" value="Karpenisi">Καρπενήσι</button></td>
-			<td><button type="button" class="btn btn-dark" value="Chalkis">Χαλκίδα</button></td>
-			<td><button type="button" class="btn btn-dark" value="volos">Βόλος</button></td>
-		</tr>
-	</table>
-</form>
+<table class="Cities" style="width:100%">
+	<tr>
+		<td><a href="{{ url_for('views.main_view', value='Agrinio') }}">
+		<button type="button" class="btn btn-dark" value="Agrinio">Αγρίνιο</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Athens') }}">
+		<button type="button" class="btn btn-dark" value="Athens">Αθήνα</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Patra') }}">
+		<button type="button" class="btn btn-dark" value="Patra">Πάτρα</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Kalamata') }}">
+		<button type="button" class="btn btn-dark" value="Kalamata">Καλαμάτα</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Tripoli') }}">
+		<button type="button" class="btn btn-dark" value="Tripoli">Τρίπολη</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Thessaloniki') }}">
+		<button type="button" class="btn btn-dark" value="Thessaloniki">Θεσσαλονίκη</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Karpenisi') }}">
+		<button type="button" class="btn btn-dark" value="Karpenisi">Καρπενήσι</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Chalkis') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Χαλκίδα</button></a></td>
+		<td>
+		<a href="{{ url_for('views.main_view', value='Volos') }}">
+		<button type="button" class="btn btn-dark" value="volos">Βόλος</button></a></td>
+	</tr>
+</table>
 {% endblock %}

@@ -13,6 +13,10 @@ def home_view():
 
     return render_template("home.html")
 
+@views.route('/main/<value>', methods=['POST', 'GET'])
+def main_view(value):
+    return render_template("main.html", city=value) 
+
 @views.route('/about', methods=['GET'])
 def about_view():
     return render_template("about.html")
