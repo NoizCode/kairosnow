@@ -7,11 +7,17 @@ response = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?q=Athe
 
 # PRETTY PRINT JSON
 json_data = json.dumps(response.json(), indent=4) 
-print(json_data)
+#print(json_data)
 
 weather_data = {}
+data = []
+i =0
 
 for item in response.json()["list"]:
-    print(item)
-    if "dt_txt" in item:
-        weather_data[item["dt_txt"]] = ""
+    data.extend([item["main"], item["weather"], item["wind"]])
+    weather_data[item["dt_txt"]] = data
+    data = []
+
+for key in weather_data:
+    print("\n")
+    print(key, weather_data[key])
