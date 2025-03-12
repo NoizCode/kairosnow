@@ -1,3 +1,11 @@
+import os
+import sys
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+from website import db
+from website.models import City
+from website.views import main_view
 import requests
 import json
 
@@ -10,8 +18,7 @@ json_data = json.dumps(response.json(), indent=4)
 #print(json_data)
 
 weather_data = {}
-data = []
-i =0
+data = [] # Temporarily store "main" and "weather" data
 
 for item in response.json()["list"]:
     data.extend([item["main"], item["weather"], item["wind"]])
@@ -20,4 +27,6 @@ for item in response.json()["list"]:
 
 for key in weather_data:
     print("\n")
-    print(key, weather_data[key])
+    print(key,":", weather_data[key])
+
+print(main_view.city_name)

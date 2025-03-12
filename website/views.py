@@ -15,6 +15,7 @@ def home_view():
 
 @views.route('/main/<value>', methods=['POST', 'GET'])
 def main_view(value):
+    city_name = value
     return render_template("main.html", city=value) 
 
 @views.route('/about', methods=['GET'])
