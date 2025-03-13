@@ -9,7 +9,9 @@ views = Blueprint('views', __name__)
 @views.route('/', methods=['POST', 'GET'])
 def home_view():
     if request.method == "POST":
-        city = request.form.get("search-query")
+        search = request.form.get("search-query")
+        search_results = db.session.query(City).filter(City.name.ilike(f"%{search}%")).all()
+        return render_template("search.html", search_city=search, search_result=search_results)
 
     return render_template("home.html")
 

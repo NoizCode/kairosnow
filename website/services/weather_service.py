@@ -30,9 +30,9 @@ for current_city in cities:
         data = []
 
     ### Print data for debugging ###
-    for key in weather_data:
-        print("\n")
-        print(key,":", weather_data[key])
+    #for key in weather_data:
+    #    print("\n")
+    #    print(key,":", weather_data[key])
 
     app = create_app()
 
@@ -57,7 +57,7 @@ for current_city in cities:
                 temp_max = round(temp_data["temp_max"] - k),
                 humidity = temp_data["humidity"],
                 main_weath = main_weath[0]["main"],
-                main_desc = main_weath[0]["description"],
+                main_desc = main_weath[0]["description"].capitalize(),
                 wind_speed = wind_data["speed"]
             )
             db.session.add(new_timestamp)

@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block title %}Search: {{search_city}}{% endblock %}
+{% block content %}
+<br>
+{% if search_result %}
+    <ul>
+        {% for city in search_result %}
+            <li>
+                <a href="{{ url_for('views.main_view', value=city.name)}}">
+                <button type="button" class="btn btn-dark" value="{{city.name}}">{{city.name}}</button></a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <h1>No resuls match your search...</h1>
+{% endif %}
+{% endblock %}

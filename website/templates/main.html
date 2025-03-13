@@ -6,7 +6,6 @@
 <ul class="list-group">
     {% for time in timestamp %}
     <li class="list-group-item"><b>Date & Time: {{time.time}} | {{time.city.name}}</b></li>
-    <li class="list-group-item">Main: {{time.main_weath}}</li>
     <li class="list-group-item">Description: {{time.main_desc}}</li>
     <li class="list-group-item">Temperature: {{time.temp}}°C</li>
     <li class="list-group-item">Feels like: {{time.feels_like}}°C</li>
