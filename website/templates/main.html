@@ -1,6 +1,8 @@
 {% extends "base.html" %}{% block title %}{% endblock %}
 {% block content %}
+<br>
 <h1 style="text-align: center;">This is the page for {{ city }}</h1>
+<br>
 <ul class="list-group">
     {% for time in timestamp %}
     <li class="list-group-item">Date & Time: {{time.time}} | {{time.city.name}}</li>
