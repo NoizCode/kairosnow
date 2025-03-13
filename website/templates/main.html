@@ -1,7 +1,7 @@
-{% extends "base.html" %}{% block title %}{% endblock %}
+{% extends "base.html" %}{% block title %}{{city}}{% endblock %}
 {% block content %}
 <br>
-<h1 style="text-align: center;">This is the page for {{ city }}</h1>
+<h1 style="text-align: center;">{{city}}</h1>
 <br>
 <ul class="list-group">
     {% for time in timestamp %}
