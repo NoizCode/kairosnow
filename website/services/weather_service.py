@@ -12,6 +12,7 @@ import json
 
 API_KEY = "c97a89a1a175f935e3f864807e4643f4"
 cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos"]
+k = 273.15 # Kelvin to celsius conversion
 
 for current_city in cities:
     response = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?q={current_city}&appid={API_KEY}")
@@ -29,9 +30,9 @@ for current_city in cities:
         data = []
 
     ### Print data for debugging ###
-    #for key in weather_data:
-    #    print("\n")
-    #    print(key,":", weather_data[key])
+    for key in weather_data:
+        print("\n")
+        print(key,":", weather_data[key])
 
     app = create_app()
 
@@ -50,10 +51,10 @@ for current_city in cities:
             new_timestamp = Timestamp(
                 city_id  = city_add.id,
                 time = timestamp,
-                temp = temp_data["temp"],
-                feels_like = temp_data["feels_like"],
-                temp_min = temp_data["temp_min"],
-                temp_max = temp_data["temp_max"],
+                temp = round(temp_data["temp"] - k),
+                feels_like = round(temp_data["feels_like"] - k),
+                temp_min = round(temp_data["temp_min"] - k),
+                temp_max = round(temp_data["temp_max"] - k),
                 humidity = temp_data["humidity"],
                 main_weath = main_weath[0]["main"],
                 main_desc = main_weath[0]["description"],
