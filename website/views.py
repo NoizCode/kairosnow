@@ -15,7 +15,7 @@ def home_view():
 
 @views.route('/main/<value>', methods=['POST', 'GET'])
 def main_view(value):
-    timestamps = Timestamp.query.options(joinedload(Timestamp.city)).all()
+    timestamps = Timestamp.query.options(joinedload(Timestamp.city)).filter(Timestamp.city.has(name=value)).all()
     return render_template("main.html", city=value, timestamp=timestamps) 
 
 @views.route('/about', methods=['GET'])

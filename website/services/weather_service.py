@@ -11,7 +11,7 @@ import requests
 import json
 
 API_KEY = "c97a89a1a175f935e3f864807e4643f4"
-cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalcis", "Volos"]
+cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos"]
 
 for current_city in cities:
     response = requests.get(f"http://api.openweathermap.org/data/2.5/forecast?q={current_city}&appid={API_KEY}")
@@ -62,3 +62,4 @@ for current_city in cities:
             db.session.add(new_timestamp)
 
         db.session.commit()
+        print(f"Fetched data for {current_city} succesfully.\nCommited to the database.")
