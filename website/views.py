@@ -17,13 +17,28 @@ def home_view():
 
 @views.route('/main/<value>', methods=['POST', 'GET'])
 def main_view(value):
+    if request.method == "POST":
+        search = request.form.get("search-query")
+        search_results = db.session.query(City).filter(City.name.ilike(f"%{search}%")).all()
+        return render_template("search.html", search_city=search, search_result=search_results)
+
     timestamps = Timestamp.query.options(joinedload(Timestamp.city)).filter(Timestamp.city.has(name=value)).all()
     return render_template("main.html", city=value, timestamp=timestamps) 
 
-@views.route('/about', methods=['GET'])
+@views.route('/about', methods=['POST', 'GET'])
 def about_view():
+    if request.method == "POST":
+        search = request.form.get("search-query")
+        search_results = db.session.query(City).filter(City.name.ilike(f"%{search}%")).all()
+        return render_template("search.html", search_city=search, search_result=search_results)
+
     return render_template("about.html")
 
-@views.route('/contact', methods=['GET'])
+@views.route('/contact', methods=['POST', 'GET'])
 def contact_view():
+    if request.method == "POST":
+        search = request.form.get("search-query")
+        search_results = db.session.query(City).filter(City.name.ilike(f"%{search}%")).all()
+        return render_template("search.html", search_city=search, search_result=search_results)
+
     return render_template("contact.html")
