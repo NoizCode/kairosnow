@@ -1,4 +1,18 @@
 {% extends "base.html" %}{% block title %}{% endblock %}
 {% block content %}
 <h1 style="text-align: center;">This is the page for {{ city }}</h1>
+<ul class="list-group">
+    {% for time in timestamp %}
+    <li class="list-group-item">Date & Time: {{time.time}} | {{time.city.name}}</li>
+    <li class="list-group-item">Main: {{time.main_weath}}</li>
+    <li class="list-group-item">Description: {{time.main_desc}}</li>
+    <li class="list-group-item">Temperature: {{time.temp}}</li>
+    <li class="list-group-item">Feels like: {{time.feels_like}}</li>
+    <li class="list-group-item">Max Temperature: {{time.temp_max}}</li>
+    <li class="list-group-item">Minimum Temperature: {{time.temp_min}}</li>
+    <li class="list-group-item">Humidity: {{time.humidity}}</li>
+    <li class="list-group-item">Wind Speed: {{time.wind_speed}}</li>
+    <br>
+    {% endfor %}
+</ul>
 {% endblock %}
