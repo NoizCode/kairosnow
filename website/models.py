@@ -22,3 +22,4 @@ class Timestamp(db.Model):
     main_weath = db.Column(db.String(100))
     main_desc = db.Column(db.String(100))
     wind_speed = db.Column(db.Float)
+    icon = db.Column(db.String(100))

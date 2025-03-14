@@ -17,3 +17,20 @@ html, body {
     margin-top: auto;
     width: 100%;
 }
+
+.main-table {
+    width: 60%;
+    border: 1px solid dimgray;
+    margin: 20px auto;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.thead {
+    background-color: dimgray;
+    color: azure;
+}
+
+.main-td {
+    padding: 10px;
+}

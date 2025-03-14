@@ -3,17 +3,32 @@
 <br>
 <h1 style="text-align: center;">{{city}}</h1>
 <br>
-<ul class="list-group">
-    {% for time in timestamp %}
-        <li class="list-group-item"><b>Date & Time: {{time.time}} | {{time.city.name}}</b></li>
-        <li class="list-group-item">Description: {{time.main_desc}}</li>
-        <li class="list-group-item">Temperature: {{time.temp}}°C</li>
-        <li class="list-group-item">Feels like: {{time.feels_like}}°C</li>
-        <li class="list-group-item">Max Temperature: {{time.temp_max}}°C</li>
-        <li class="list-group-item">Minimum Temperature: {{time.temp_min}}°C</li>
-        <li class="list-group-item">Humidity: {{time.humidity}}</li>
-        <li class="list-group-item">Wind Speed: {{time.wind_speed}}m/s</li>
-        <br>
-    {% endfor %}
-</ul>
+{% for time in timestamp %}
+    <table class="main-table">
+        <tr>
+            <td colspan="2" class="main-td thead"><h4>{{time.time}}</h4></td>
+        </tr>
+        <tr>
+            <td rowspan="4" class="main-td">
+                <img src="{{time.icon}}" class="weather-icon">
+            </td>
+        </tr>
+        <tr>
+            <td class="main-td">Temperature: {{time.temp}}°C</td>
+        </tr>
+        <tr>
+            <td class="main-td">Max. Temperature: {{time.temp_max}}°C</td>
+        </tr>
+        <tr>
+            <td class="main-td">Min. Temperature: {{time.temp_min}}°C</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="main-td">{{time.main_desc}}</td>
+            <td class="main-td">Humidity: {{time.humidity}}</td>
+        </tr>
+        <tr>
+            <td class="main-td">Wind Speed: {{time.wind_speed}}m/s</td>
+        </tr>
+    </table>
+{% endfor %}
 {% endblock %}
