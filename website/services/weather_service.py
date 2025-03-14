@@ -42,7 +42,9 @@ for current_city in cities:
         db.session.commit()
 
         for key,value in weather_data.items():
-            timestamp = datetime.strptime(key, "%Y-%m-%d %H:%M:%S")
+
+            time_date = datetime.strptime(key, "%Y-%m-%d %H:%M:%S")
+            timestamp = time_date.strftime("%d-%m-%Y %H:%M:%S")
 
             temp_data = value[0]
             main_weath = value[1]
@@ -58,7 +60,8 @@ for current_city in cities:
                 humidity = temp_data["humidity"],
                 main_weath = main_weath[0]["main"],
                 main_desc = main_weath[0]["description"].capitalize(),
-                wind_speed = wind_data["speed"]
+                wind_speed = wind_data["speed"],
+                icon = str(f" https://openweathermap.org/img/wn/{main_weath[0]["icon"]}@2x.png")
             )
             db.session.add(new_timestamp)
 
