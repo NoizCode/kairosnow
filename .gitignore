@@ -1,2 +1,4 @@
 Design/
 instance/database.db
+website/__pycache__/
+__pycache__
