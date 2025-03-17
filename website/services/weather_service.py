@@ -11,7 +11,8 @@ import requests
 import json
 
 API_KEY = "c97a89a1a175f935e3f864807e4643f4"
-cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos"]
+cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos",
+          "Chania", "Heraklion", "Rodos", "Korinthos", "Lamia", "Ioannina", "Larisa", "Arta", "Kavala"]
 k = 273.15 # Kelvin to celsius conversion
 
 for current_city in cities:

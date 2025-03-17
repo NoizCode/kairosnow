@@ -1,11 +1,13 @@
 • OpenStreeMap OR google maps
 • background image
 • In the main page, create a sidebar for city options
-• create different pages for each day
-• Update database every 1-5 minutes (Dont know yet)
 • Instead of buttons use "cards" with hover effects
 • Search bar animation
 
 #TODO
 
-  Add cities
+• Add cities -----
+• make home page prettier --
+• Update database every 1-5 minutes (Dont know yet)
+• create different pages for each day
+• Translate

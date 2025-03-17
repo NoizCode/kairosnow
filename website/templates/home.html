@@ -3,9 +3,9 @@
 <br>
 <h1 style="text-align:center;">Home</h1>
 <br>
-<table class="Cities" style="width:100%;" cellpadding="1">
+<table class="cities-table" style="width:100%;" cellpadding="1">
 	<tr>
-		<td align="center"><a href="{{ url_for('views.main_view', value='Agrinio') }}">
+		<td align="center" style="padding-bottom: 13px;"><a href="{{ url_for('views.main_view', value='Agrinio') }}">
 		<button type="button" class="btn btn-dark" value="Agrinio">Αγρίνιο</button></a></td>
 		<td align="center">
 		<a href="{{ url_for('views.main_view', value='Athens') }}">
@@ -13,7 +13,9 @@
 		<td align="center">
 		<a href="{{ url_for('views.main_view', value='Patra') }}">
 		<button type="button" class="btn btn-dark" value="Patra">Πάτρα</button></a></td>
-		<td align="center">
+	</tr>
+	<tr>
+		<td align="center" style="padding-bottom: 13px;">
 		<a href="{{ url_for('views.main_view', value='Kalamata') }}">
 		<button type="button" class="btn btn-dark" value="Kalamata">Καλαμάτα</button></a></td>
 		<td align="center">
@@ -22,7 +24,9 @@
 		<td align="center">
 		<a href="{{ url_for('views.main_view', value='Thessaloniki') }}">
 		<button type="button" class="btn btn-dark" value="Thessaloniki">Θεσσαλονίκη</button></a></td>
-		<td align="center">
+	</tr>
+	<tr>
+		<td align="center" style="padding-bottom: 13px;">
 		<a href="{{ url_for('views.main_view', value='Karpenisi') }}">
 		<button type="button" class="btn btn-dark" value="Karpenisi">Καρπενήσι</button></a></td>
 		<td align="center">
@@ -31,6 +35,39 @@
 		<td align="center">
 		<a href="{{ url_for('views.main_view', value='Volos') }}">
 		<button type="button" class="btn btn-dark" value="volos">Βόλος</button></a></td>
+	</tr>
+	<tr>
+		<td align="center" style="padding-bottom: 13px;">
+		<a href="{{ url_for('views.main_view', value='Chania') }}">
+		<button type="button" class="btn btn-dark" value="Karpenisi">Χανιά</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Heraklion') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Ηράκλειο</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Rodos') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Ρόδος</button></a></td>
+	</tr>
+	<tr>
+		<td align="center" style="padding-bottom: 13px;">
+		<a href="{{ url_for('views.main_view', value='Korinthos') }}">
+		<button type="button" class="btn btn-dark" value="Karpenisi">Κόρινθος</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Lamia') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Λαμία</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Ioannina') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Ιωάννινα</button></a></td>
+	</tr>
+	<tr>
+		<td align="center" style="padding-bottom: 13px;">
+		<a href="{{ url_for('views.main_view', value='Larisa') }}">
+		<button type="button" class="btn btn-dark" value="Karpenisi">Λάρισα</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Arta') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Άρτα</button></a></td>
+		<td align="center">
+		<a href="{{ url_for('views.main_view', value='Kavala') }}">
+		<button type="button" class="btn btn-dark" value="Chalkis">Καβάλα</button></a></td>
 	</tr>
 </table>
 {% endblock %}
