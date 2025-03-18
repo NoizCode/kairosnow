@@ -8,6 +8,6 @@
 
 • Add cities -----
 • make home page prettier --
-• Update database every 1-5 minutes (Dont know yet)
+• Update database every 1-5 minutes (Dont know yet) - with APScheduler
 • create different pages for each day
 • Translate
