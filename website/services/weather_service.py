@@ -72,7 +72,7 @@ def fetch_and_store_data():
                     main_weath = main_weath[0]["main"],
                     main_desc = main_weath[0]["description"].capitalize(),
                     wind_speed = wind_data["speed"],
-                    icon = str(f" https://openweathermap.org/img/wn/{main_weath[0]["icon"]}@2x.png")
+                    icon = str(f" https://openweathermap.org/img/wn/{main_weath[0]['icon']}@2x.png")
                 )
                 db.session.add(new_timestamp)
 
