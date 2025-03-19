@@ -23,7 +23,7 @@ def create_app():
 
     # Scheduler Setup
     scheduler = BackgroundScheduler()
-    scheduler.add_job(fetch_and_store_data, 'interval', seconds=10)
+    scheduler.add_job(fetch_and_store_data, 'interval', minutes=60)
     scheduler.start()
 
     return app
