@@ -11,3 +11,4 @@
 • Update database every 1-5 minutes (Dont know yet) - with APScheduler
 • create different pages for each day
 • Translate
+• SOS use environment variables for api keys and database keys SOS

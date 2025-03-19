@@ -1,5 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from apscheduler.schedulers.background import BackgroundScheduler
+from website.services.weather_service import fetch_and_store_data
 import os
 
 db = SQLAlchemy()
@@ -18,5 +20,10 @@ def create_app():
     with app.app_context():
         from .models import City
         db.create_all()
+
+    # Scheduler Setup
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(fetch_and_store_data, 'interval', seconds=10)
+    scheduler.start()
 
     return app
