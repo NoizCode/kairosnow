@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, jsonify, g
 from sqlalchemy.orm import joinedload
 from .models import City, Timestamp
+from .services.weather_service import fetch_and_store_data
 from . import db
 import json
 
@@ -8,6 +9,7 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['POST', 'GET'])
 def home_view():
+    fetch_and_store_data()
     if request.method == "POST":
         search = request.form.get("search-query")
         search_results = db.session.query(City).filter(City.name.ilike(f"%{search}%")).all()
