@@ -9,7 +9,11 @@ import requests
 import json
 from dotenv import load_dotenv
 
+if os.environ.get('FLASK_ENV') != "production":
+    load_dotenv()
+
 API_KEY = os.getenv("API_KEY")
+
 cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos",
           "Chania", "Heraklion", "Rodos", "Korinthos", "Lamia", "Ioannina", "Larisa", "Arta", "Kavala"]
 k = 273.15 # Kelvin to celsius conversion
