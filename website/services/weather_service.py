@@ -7,8 +7,9 @@ from sqlalchemy.orm import joinedload
 from datetime import datetime
 import requests
 import json
+from dotenv import load_dotenv
 
-API_KEY = "c97a89a1a175f935e3f864807e4643f4"
+API_KEY = os.getenv("API_KEY")
 cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "Karpenisi", "Chalkis", "Volos",
           "Chania", "Heraklion", "Rodos", "Korinthos", "Lamia", "Ioannina", "Larisa", "Arta", "Kavala"]
 k = 273.15 # Kelvin to celsius conversion
