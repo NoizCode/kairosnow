@@ -7,6 +7,7 @@ from sqlalchemy.orm import joinedload
 from datetime import datetime
 import requests
 import json
+import traceback
 from dotenv import load_dotenv
 
 if os.environ.get('FLASK_ENV') != "production":
@@ -18,10 +19,8 @@ cities = ["Agrinio", "Athens", "Patra", "Kalamata", "Tripoli", "Thessaloniki", "
           "Chania", "Heraklion", "Rodos", "Korinthos", "Lamia", "Ioannina", "Larisa", "Arta", "Kavala"]
 k = 273.15 # Kelvin to celsius conversion
 
-def fetch_and_store_data():
-    from website import create_app
-    app = create_app()
-
+def fetch_and_store_data(app):
+    print("running weather service...")
     from website.models import City, Timestamp
     from website import db
 

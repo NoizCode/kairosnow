@@ -6,6 +6,7 @@ import os
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
+scheduler = BackgroundScheduler()
 
 def create_app():
     app = Flask(__name__)
@@ -21,9 +22,10 @@ def create_app():
         from .models import City
         db.create_all()
 
-    # Scheduler Setup
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(fetch_and_store_data, 'interval', minutes=30)
-    scheduler.start()
+    if not scheduler.running:
+        fetch_and_store_data(app)
+        # Scheduler Setup
+        scheduler.add_job(fetch_and_store_data, 'interval', minutes=30, args=[app])
+        scheduler.start()
 
     return app
