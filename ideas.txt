@@ -8,8 +8,5 @@
 
 • Add cities -----
 • make home page prettier --
-• Update database every 1-5 minutes (Dont know yet) - with APScheduler >>>>> It updates
-  but i need to find a way to call the database when the server is started.
 • create different pages for each day
 • Translate
-• SOS use environment variables for api keys and database keys SOS
