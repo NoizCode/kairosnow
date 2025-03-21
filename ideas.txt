@@ -3,6 +3,7 @@
 • In the main page, create a sidebar for city options
 • Instead of buttons use "cards" with hover effects
 • Search bar animation
+• Dynamic search bar
 
 #TODO
 
